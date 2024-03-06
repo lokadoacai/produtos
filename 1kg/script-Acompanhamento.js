@@ -9,7 +9,9 @@ let escolhaComplementos = [];
 let indiceCobertura = sessionStorage.length;
 let indiceFrutas = sessionStorage.length;
 let indiceComplementos = sessionStorage.length;
-let indiceExtras = sessionStorage.length;
+let indiceAcai = sessionStorage.length;
+let indiceSorvete = sessionStorage.length;
+
 
 function concluirPedido() {
     const cobertura = document.getElementsByName('cobertura');
@@ -77,7 +79,7 @@ function concluirPedido() {
     let OpcaoComplemento = `escolhaComplemento_${indiceComplementos}`;
     let OpcaoSorvete = `sorvete_${indiceSorvete}`;
     let OpcaoAcai = `acai_${indiceAcai}`;
-
+   
     // Armazenar no sessionStorage
     sessionStorage.setItem(OpcaoCobertura, JSON.stringify(escolhaCobertura));
     sessionStorage.setItem(OpcaoFruta, JSON.stringify(escolhaFrutas));
