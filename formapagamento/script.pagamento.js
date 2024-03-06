@@ -130,10 +130,6 @@ const enviarMensagemWhatsApp=()=> {
         *COMPLEMENTO:* \n${formatarObjetoParaString(escolhaComplementos)}
         *FRUTAS:*  \n${formatarObjetoParaString(escolhaFrutas)}
         *COBERTURA:* \n ${formatarObjetoParaString(escolhaCobertura)}
-       
-      
-        
-        
         ____________________________________
    `;
 
