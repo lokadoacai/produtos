@@ -95,7 +95,8 @@ const carrinhoCompras = () => {
       const chaveCobertura = `escolhaCobertura_${i}`;
       const chaveFruta = `escolhaFruta_${i}`;
       const chaveComplemento = `escolhaComplemento_${i}`;
-      const chaveExtra = `escolhaExtras_${i}`;
+      const chaveSorvete = `sorvete_${i}`;
+      const chaveAcai= `acai_${i}`;
 
       const escolhaQuantidade = sessionStorage.getItem(chaveQuantidade);
       const escolhaProduto = sessionStorage.getItem(chaveProduto);
@@ -103,9 +104,10 @@ const carrinhoCompras = () => {
       const escolhaCobertura = JSON.parse(sessionStorage.getItem(chaveCobertura)) || [];
       const escolhaFrutas = JSON.parse(sessionStorage.getItem(chaveFruta)) || [];
       const escolhaComplementos = JSON.parse(sessionStorage.getItem(chaveComplemento)) || [];
-      const escolhaExtras = JSON.parse(sessionStorage.getItem(chaveExtra)) || [];
+      const escolhaAcai = JSON.parse(sessionStorage.getItem(chaveSorvete)) || [];
+      const escolhaSorvete = JSON.parse(sessionStorage.getItem(chaveAcai)) || [];
 
-      if (escolhaProduto && escolhaCobertura && escolhaFrutas && escolhaComplementos && escolhaExtras && !isNaN(escolhaValor)) {
+      if (escolhaProduto && escolhaCobertura && escolhaFrutas && escolhaComplementos && escolhaExtras && escolhaAcai && escolhaSorvete && !isNaN(escolhaValor)) {
         let div = document.createElement('div');
         div.setAttribute("class", "mercadoria");
 
@@ -134,10 +136,12 @@ const carrinhoCompras = () => {
  <br><br>-> QUANTIDADE:
  <br><br>
  <br><br><span style="font-weight: bold;"> ACOMPANHAMENTOS</span>
-   <br><br><span style="font-weight: bold;">&#127860; COBERTURA:</span> <br> ${formatarObjetoParaString(escolhaCobertura)}
-   <br><br><span style="font-weight: bold;">&#127860; FRUTAS:</span> <br> ${formatarObjetoParaString(escolhaFrutas)}
+   <br><br><span style="font-weight: bold;">&#127860; SORVETE:</span> <br> ${formatarObjetoParaString(escolhaSorvete)} 
+   <br><br><span style="font-weight: bold;">&#127860; AÇAÍ:</span> <br> ${formatarObjetoParaString(escolhaAcai)} 
    <br><br><span style="font-weight: bold;">&#127860; COMPLEMENTO:</span> <br> ${formatarObjetoParaString(escolhaComplementos)}
-   <br><br><span style="font-weight: bold;">&#127860; EXTRAS:</span> <br> ${formatarObjetoParaString(escolhaExtras)} <br></p>
+   <br><br><span style="font-weight: bold;">&#127860; FRUTAS:</span> <br> ${formatarObjetoParaString(escolhaFrutas)}
+   <br><br><span style="font-weight: bold;">&#127860; COBERTURA:</span> <br> ${formatarObjetoParaString(escolhaCobertura)}
+   <br></p>
    `;
         // CALCULO ---------------------------------
         const somarArray = (array) => {
@@ -148,10 +152,11 @@ const carrinhoCompras = () => {
         const somaCobertura = somarArray(escolhaCobertura);
         const somaFrutas = somarArray(escolhaFrutas);
         const somaComplementos = somarArray(escolhaComplementos);
-        const somaExtras = somarArray(escolhaExtras);
+        const somaAcai = somarArray(escolhaAcai);
+        const somaSorvete = somarArray(escolhaSorvete);
 
         // Calcular a soma total
-        const somaTotal = parseFloat(escolhaValor) * escolhaQuantidade + (somaCobertura + somaFrutas + somaComplementos + somaExtras);
+        const somaTotal = parseFloat(escolhaValor) * escolhaQuantidade + (somaCobertura + somaFrutas + somaComplementos + somaAcai + somaSorvete);
 
         container.appendChild(div);
         Apagar(div, chaveProduto, chaveValor, somaTotal);

@@ -76,7 +76,7 @@ function concluirPedido() {
     let OpcaoFruta = `escolhaFruta_${indiceFrutas}`;
     let OpcaoComplemento = `escolhaComplemento_${indiceComplementos}`;
     let OpcaoSorvete = `sorvete_${indiceSorvete}`;
-    let OpcaoAcai = `sorvete_${indiceAcai}`;
+    let OpcaoAcai = `acai_${indiceAcai}`;
 
     // Armazenar no sessionStorage
     sessionStorage.setItem(OpcaoCobertura, JSON.stringify(escolhaCobertura));
