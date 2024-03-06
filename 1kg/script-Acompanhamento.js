@@ -24,7 +24,7 @@ function concluirPedido() {
             };
             escolhaCobertura.push(escolha);
         }
-    }LK
+    }
 
     const frutas = document.getElementsByName('frutas');
     escolhaFrutas = [];
