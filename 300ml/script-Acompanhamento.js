@@ -51,7 +51,7 @@ function concluirPedido() {
     }
 
     const sorvete = document.getElementsByName('sorvetes');
-    OpcaoSorvete = [];
+    escolhaSorvete = [];
     for (let i = 0; i < sorvete.length; i++) {
         if (sorvete[i].checked) {
             const escolha = {
@@ -63,7 +63,7 @@ function concluirPedido() {
     }
 
     const acai = document.getElementsByName('acai');
-    OpcaoAcai = [];
+    escolhaAcai = [];
     for (let i = 0; i < acai.length; i++) {
         if (acai[i].checked) {
             const escolha = {
