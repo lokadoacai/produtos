@@ -8,7 +8,8 @@
   align-items: center;
   position: relative;
   animation: flutuar 2s ease-in-out infinite alternate;
-
+  border-radius: 100px;
+  margin-bottom: 10px;
 }
 
 @keyframes flutuar {

@@ -58,7 +58,6 @@ function concluirPedido() {
         }
     }
 
-    
     let OpcaoCobertura = `escolhaCobertura_${indiceCobertura}`;
     let OpcaoFruta = `escolhaFruta_${indiceFrutas}`;
     let OpcaoComplemento = `escolhaComplemento_${indiceComplementos}`;
@@ -70,6 +69,7 @@ function concluirPedido() {
     sessionStorage.setItem(OpcaoComplemento, JSON.stringify(escolhaComplementos));
     sessionStorage.setItem(OpcaoExtras, JSON.stringify(escolhaExtras));
 }
+
 
 const ValorDisplay1 = document.getElementById('displayInput1');
 let value = parseInt(ValorDisplay1.value); // Move a declaração para fora dos eventos de clique
@@ -112,7 +112,7 @@ const validacoes = () => {
     } else if (
         escolhaCobertura.length > 1 ||
         escolhaFrutas.length > 2 ||
-        escolhaComplementos.length > 4
+        escolhaComplementos.length > 5
     ) {
         alert("Por favor, escolha apenas a quantidade de OPÇÕES permitida.");
         return false;
@@ -127,16 +127,16 @@ const validacoes = () => {
         return false;
     }
 
-
     else {
         //location.reload();
         Armazenar_Mais_Menos();
         // Redirecionar para a próxima página
-        window.location.href = '/LiderAcai/aRESUMO/pagina-Resumo.html';
+        window.location.href = '/produtos/aRESUMO/pagina-Resumo.html';
         //window.location.href = '../aRESUMO/pagina-Resumo.html';
     }
 
 }
+
 
 let indiceProduto = sessionStorage.length;
 let indiceValor = sessionStorage.length;

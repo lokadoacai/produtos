@@ -5,7 +5,8 @@
     margin: auto;
     position: relative;
     animation: flutuar 2s ease-in-out infinite alternate;
-
+    margin-bottom: 10px;
+    border-radius: 100px;
 }
 
 @keyframes flutuar {

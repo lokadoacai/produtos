@@ -9,6 +9,8 @@ let indiceFrutas = sessionStorage.length;
 let indiceComplementos = sessionStorage.length;
 let indiceExtras = sessionStorage.length;
 
+
+
 function concluirPedido() {
     const cobertura = document.getElementsByName('cobertura');
     escolhaCobertura = [];
@@ -58,17 +60,23 @@ function concluirPedido() {
         }
     }
 
+   
+
+
     let OpcaoCobertura = `escolhaCobertura_${indiceCobertura}`;
     let OpcaoFruta = `escolhaFruta_${indiceFrutas}`;
     let OpcaoComplemento = `escolhaComplemento_${indiceComplementos}`;
     let OpcaoExtras = `escolhaExtras_${indiceExtras}`;
 
     // Armazenar no sessionStorage
+
+
     sessionStorage.setItem(OpcaoCobertura, JSON.stringify(escolhaCobertura));
     sessionStorage.setItem(OpcaoFruta, JSON.stringify(escolhaFrutas));
     sessionStorage.setItem(OpcaoComplemento, JSON.stringify(escolhaComplementos));
     sessionStorage.setItem(OpcaoExtras, JSON.stringify(escolhaExtras));
 }
+
 
 
 const ValorDisplay1 = document.getElementById('displayInput1');
@@ -109,10 +117,10 @@ const Armazenar_Mais_Menos = () => {
 const validacoes = () => {
     if (ValorDisplay1.value === "" || ValorDisplay1.value == 0) {
         alert("Informe a quantidade!");
-    } else if (
+    }  else if (
         escolhaCobertura.length > 1 ||
         escolhaFrutas.length > 2 ||
-        escolhaComplementos.length > 5
+        escolhaComplementos.length > 3
     ) {
         alert("Por favor, escolha apenas a quantidade de OPÇÕES permitida.");
         return false;
@@ -126,13 +134,13 @@ const validacoes = () => {
         alert("Por favor, escolha ao menos uma seleção em cada categoria -> COBERTURA/FRUTAS/COMPLEMENTO.");
         return false;
     }
-
+    
     else {
-        //location.reload();
+         //location.reload();
         Armazenar_Mais_Menos();
-        // Redirecionar para a próxima página
-        window.location.href = '/LiderAcai/aRESUMO/pagina-Resumo.html';
-        //window.location.href = '../aRESUMO/pagina-Resumo.html';
+         // Redirecionar para a próxima página
+    window.location.href = '/produtos/aRESUMO/pagina-Resumo.html';
+    //window.location.href = '../aRESUMO/pagina-Resumo.html';
     }
 
 }

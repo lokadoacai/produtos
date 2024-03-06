@@ -84,13 +84,14 @@ main {
 
 /*logo*/
 .LOGO {
+    border-radius: 100px;
     width: 250px;
     height: 250px;
     margin: auto;
     position: relative;
     animation: flutuar 2s ease-in-out infinite alternate;
-
-}
+    }
+  
 
 @keyframes flutuar {
     0% {
