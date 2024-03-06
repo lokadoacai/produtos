@@ -107,7 +107,7 @@ const carrinhoCompras = () => {
       const escolhaAcai = JSON.parse(sessionStorage.getItem(chaveSorvete)) || [];
       const escolhaSorvete = JSON.parse(sessionStorage.getItem(chaveAcai)) || [];
 
-      if (escolhaProduto && escolhaCobertura && escolhaFrutas && escolhaComplementos && escolhaExtras && escolhaAcai && escolhaSorvete && !isNaN(escolhaValor)) {
+      if (escolhaProduto && escolhaCobertura && escolhaFrutas && escolhaComplementos && escolhaAcai && escolhaSorvete && !isNaN(escolhaValor)) {
         let div = document.createElement('div');
         div.setAttribute("class", "mercadoria");
 
