@@ -1,8 +1,10 @@
 //CODIGO DA PAGINA ACOMPANHAMENTOS
+let escolhaSorvete = [];
+let escolhaAcai = [];
 let escolhaCobertura = [];
 let escolhaFrutas = [];
 let escolhaComplementos = [];
-let escolhaExtras = [];
+
 
 let indiceCobertura = sessionStorage.length;
 let indiceFrutas = sessionStorage.length;
@@ -46,29 +48,42 @@ function concluirPedido() {
         }
     }
 
-    const extras = document.getElementsByName('extras');
-    escolhaExtras = [];
-    for (let i = 0; i < extras.length; i++) {
-        if (extras[i].checked) {
+    const sorvete = document.getElementsByName('sorvetes');
+    sorvete = [];
+    for (let i = 0; i < sorvete.length; i++) {
+        if (sorvete[i].checked) {
             const escolha = {
-                texto: extras[i].getAttribute('data-text'),
-                valor: extras[i].value
+                texto: sorvete[i].getAttribute('data-text'),
+                valor: sorvete[i].value
             };
-            escolhaExtras.push(escolha);
+            escolhaSorvete.push(escolha);
+        }
+    }
+
+    const acai = document.getElementsByName('acai');
+    acai = [];
+    for (let i = 0; i < acai.length; i++) {
+        if (acai[i].checked) {
+            const escolha = {
+                texto: acai[i].getAttribute('data-text'),
+                valor: acai[i].value
+            };
+            escolhaAcai.push(escolha);
         }
     }
 
     let OpcaoCobertura = `escolhaCobertura_${indiceCobertura}`;
     let OpcaoFruta = `escolhaFruta_${indiceFrutas}`;
     let OpcaoComplemento = `escolhaComplemento_${indiceComplementos}`;
-    let OpcaoExtras = `escolhaExtras_${indiceExtras}`;
+    let OpcaoSorvete = `sorvete_${indiceSorvete}`;
+    let OpcaoAcai = `sorvete_${indiceAcai}`;
 
     // Armazenar no sessionStorage
     sessionStorage.setItem(OpcaoCobertura, JSON.stringify(escolhaCobertura));
     sessionStorage.setItem(OpcaoFruta, JSON.stringify(escolhaFrutas));
     sessionStorage.setItem(OpcaoComplemento, JSON.stringify(escolhaComplementos));
-    sessionStorage.setItem(OpcaoExtras, JSON.stringify(escolhaExtras));
-
+    sessionStorage.setItem(OpcaoSorvete, JSON.stringify(sorvete));
+    sessionStorage.setItem(OpcaoAcai, JSON.stringify(acai));
 }
 
 
@@ -111,9 +126,8 @@ const validacoes = () => {
     if (ValorDisplay1.value === "" || ValorDisplay1.value == 0) {
         alert("Informe a quantidade!");
     } else if (
-        escolhaCobertura.length > 1 ||
-        escolhaFrutas.length > 2 ||
-        escolhaComplementos.length > 4
+        escolhaCobertura.length > 5 ||
+        escolhaComplementos.length > 10
     ) {
         alert("Por favor, escolha apenas a quantidade de OPÇÕES permitida.");
         return false;
@@ -121,12 +135,15 @@ const validacoes = () => {
 
     else if (
         escolhaCobertura.length === 0 ||
+        escolhaAcai === 0 ||
+        escolhaSorvete === 0 ||
         escolhaFrutas.length === 0 ||
         escolhaComplementos.length === 0
     ) {
-        alert("Por favor, escolha ao menos uma seleção em cada categoria -> COBERTURA/FRUTAS/COMPLEMENTO.");
+        alert("Por favor, escolha ao menos uma seleção em cada categoria -> SORVETE/AÇAI/COMPLEMENTOS/FRUTAS/COBERTURA.");
         return false;
     }
+
     else {
         //location.reload();
         Armazenar_Mais_Menos();
@@ -136,6 +153,7 @@ const validacoes = () => {
     }
 
 }
+
 
 let indiceProduto = sessionStorage.length;
 let indiceValor = sessionStorage.length;
