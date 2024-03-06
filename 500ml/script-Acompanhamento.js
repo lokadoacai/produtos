@@ -84,8 +84,8 @@ function concluirPedido() {
     sessionStorage.setItem(OpcaoCobertura, JSON.stringify(escolhaCobertura));
     sessionStorage.setItem(OpcaoFruta, JSON.stringify(escolhaFrutas));
     sessionStorage.setItem(OpcaoComplemento, JSON.stringify(escolhaComplementos));
-    sessionStorage.setItem(OpcaoSorvete, JSON.stringify(sorvete));
-    sessionStorage.setItem(OpcaoAcai, JSON.stringify(acai));
+    sessionStorage.setItem(OpcaoSorvete, JSON.stringify(escolhaSorvete));
+    sessionStorage.setItem(OpcaoAcai, JSON.stringify(escolhaAcai));
 }
 
 
