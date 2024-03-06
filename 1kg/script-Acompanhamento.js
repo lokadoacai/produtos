@@ -14,7 +14,7 @@ let indiceSorvete = sessionStorage.length;
 
 
 function concluirPedido() {
-    const cobertura = document.getElementsByName('cobertura');
+    const cobertura = document.getElementsByName('COBERTURA');
     escolhaCobertura = [];
     for (let i = 0; i < cobertura.length; i++) {
         if (cobertura[i].checked) {
@@ -131,7 +131,7 @@ const validacoes = () => {
         escolhaCobertura.length > 5 ||
         escolhaComplementos.length > 10
     ) {
-        alert("Por favor, escolha apenas a quantidade de OPÇÕES permitida.");
+        alert("Por favor, escolha apenas a quantidade de OPÇÕES permitida. Apenas 5 opções de COBERTURA e 10 opções de COMPLEMENTO");
         return false;
     }
 
