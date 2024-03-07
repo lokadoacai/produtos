@@ -79,7 +79,7 @@ function concluirPedido() {
     let OpcaoComplemento = `escolhaComplemento_${indiceComplementos}`;
     let OpcaoSorvete = `sorvete_${indiceSorvete}`;
     let OpcaoAcai = `acai_${indiceAcai}`;
-   
+
     // Armazenar no sessionStorage
     sessionStorage.setItem(OpcaoCobertura, JSON.stringify(escolhaCobertura));
     sessionStorage.setItem(OpcaoFruta, JSON.stringify(escolhaFrutas));
@@ -126,25 +126,39 @@ const Armazenar_Mais_Menos = () => {
 //VALIDA SE A QUANTIDADE ESTÁ INSERIDA E DEPOIS ENVIA AO SESSIONSTORAGE
 const validacoes = () => {
     if (ValorDisplay1.value === "" || ValorDisplay1.value == 0) {
-        alert("Informe a quantidade!");
-    } else if (
-        escolhaCobertura.length > 5 ||
-        escolhaComplementos.length > 10
-    ) {
-        alert("Por favor, escolha apenas a quantidade de OPÇÕES permitida. Apenas 5 opções de COBERTURA e 10 opções de COMPLEMENTO");
+        alert("Por favor, Informe a Quantidade!");
+    } 
+    else if (escolhaCobertura.length > 5) {
+        alert("Por favor, escolha apenas 5 OPÇÕES de Cobertura");
+        return false;
+    } 
+    else if (escolhaComplementos.length > 10 ) {
+        alert("Por favor, escolha apenas 10 OPÇÕES de Complementos");
         return false;
     }
-
-    else if (
-        escolhaCobertura.length === 0 ||
-        escolhaAcai === 0 ||
-        escolhaSorvete === 0 ||
-        escolhaFrutas.length === 0 ||
-        escolhaComplementos.length === 0
-    ) {
-        alert("Por favor, escolha ao menos uma seleção em cada categoria -> SORVETE/AÇAI/COMPLEMENTOS/FRUTAS/COBERTURA.");
+    //-----------------
+    
+    else if ( escolhaSorvete.length === 0) {
+        alert("Por favor, escolha ao menos uma OPÇÃO de SORVETE.");
         return false;
     }
+    else if (escolhaAcai.length === 0 ) {
+        alert("Por favor, escolha ao menos uma OPÇÃO de AÇAI");
+        return false;
+    }
+    else if (escolhaComplementos.length === 0) {
+        alert("Por favor, escolha ao menos uma OPÇÃO de COMPLEMENTOS.");
+        return false;
+    }
+    else if (escolhaFrutas.length === 0) {
+        alert("Por favor, escolha ao menos uma OPÇÃO de FRUTAS.");
+        return false;
+    }
+    else if (escolhaCobertura.length === 0) {
+        alert("Por favor, escolha ao menos uma OPÇÃO de COBERTURA.");
+        return false;
+    }
+   
 
     else {
         //location.reload();
