@@ -8,7 +8,7 @@ const FormEnd = () => {
     let bairro = document.getElementById('bairro').value;
     let referencia = document.getElementById('referencia').value;
   
-    if (nomeRua && numeroCasa && cep && cidade && bairro && referencia) {
+    if (nomeRua && numeroCasa && cidade && bairro && referencia) {
       let endereco = {
         nomeRua: nomeRua,
         numeroCasa: numeroCasa,
