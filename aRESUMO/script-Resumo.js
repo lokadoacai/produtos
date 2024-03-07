@@ -104,8 +104,8 @@ const carrinhoCompras = () => {
       const escolhaCobertura = JSON.parse(sessionStorage.getItem(chaveCobertura)) || [];
       const escolhaFrutas = JSON.parse(sessionStorage.getItem(chaveFruta)) || [];
       const escolhaComplementos = JSON.parse(sessionStorage.getItem(chaveComplemento)) || [];
-      const escolhaAcai = JSON.parse(sessionStorage.getItem(chaveSorvete)) || [];
-      const escolhaSorvete = JSON.parse(sessionStorage.getItem(chaveAcai)) || [];
+      const escolhaAcai = JSON.parse(sessionStorage.getItem(chaveAcai)) || [];
+      const escolhaSorvete = JSON.parse(sessionStorage.getItem(chaveSorvete)) || [];
 
       if (escolhaProduto && escolhaCobertura && escolhaFrutas && escolhaComplementos && escolhaAcai && escolhaSorvete && !isNaN(escolhaValor)) {
         let div = document.createElement('div');
