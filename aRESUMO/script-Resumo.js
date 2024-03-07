@@ -138,9 +138,9 @@ const carrinhoCompras = () => {
  <br><br><span style="font-weight: bold;"> ACOMPANHAMENTOS</span>
    <br><br><span style="font-weight: bold;">&#127860; SORVETE:</span> <br> ${formatarObjetoParaString(escolhaSorvete)} 
    <br><br><span style="font-weight: bold;">&#127860; AÇAÍ:</span> <br> ${formatarObjetoParaString(escolhaAcai)} 
-   <br><br><span style="font-weight: bold;">&#127860; COMPLEMENTO:</span> <br> ${formatarObjetoParaString(escolhaComplementos)}
+   <br><br><span style="font-weight: bold;">&#127860; COMPLEMENTOS:</span> <br> ${formatarObjetoParaString(escolhaComplementos)}
    <br><br><span style="font-weight: bold;">&#127860; FRUTAS:</span> <br> ${formatarObjetoParaString(escolhaFrutas)}
-   <br><br><span style="font-weight: bold;">&#127860; COBERTURA:</span> <br> ${formatarObjetoParaString(escolhaCobertura)}
+   <br><br><span style="font-weight: bold;">&#127860; COBERTURAS:</span> <br> ${formatarObjetoParaString(escolhaCobertura)}
    <br></p>
    `;
         // CALCULO ---------------------------------
