@@ -166,7 +166,7 @@ const enviarMensagemWhatsApp=()=> {
     \n*FORMA DE PAGAMENTO:* ${formaPagamento}
     ${valorTroco ? `*TROCO:* R$ ${valorTroco}` : ''}
     *RETIRADA NO LOCAL:* ${retiradaProduto}
-    ${enderecoTexto}
+    \n${enderecoTexto}
 `;
   
     const codigoPais = '55';
